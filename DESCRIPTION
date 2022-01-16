@@ -1,4 +1,4 @@
-Package: combinemeteodata
+Package: meteo_analysis
 Type: Package
 Title: Analysis of climate change
 Version: 0.1.0
