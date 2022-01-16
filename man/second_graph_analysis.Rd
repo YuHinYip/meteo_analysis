@@ -9,6 +9,12 @@ second_graph_analysis(dataset)
 \arguments{
 \item{dataset}{data.frame}
 }
+\value{
+a ggppairs of \code{dataset}
+}
 \description{
-Second plot, ggpairs
+a more general view on other variables
+}
+\details{
+Expected the data is the combination of two weather data frame
 }

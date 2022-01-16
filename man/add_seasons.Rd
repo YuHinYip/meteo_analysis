@@ -7,8 +7,11 @@
 add_seasons(dataset)
 }
 \arguments{
-\item{dataset}{data.frame}
+\item{dataset}{data frame}
+}
+\value{
+Add a variable \strong{Season}, which has \emph{Winter}, \emph{Spring}, \emph{Summer} and \emph{Autumn}
 }
 \description{
-Add seasons
+Use for adding seasons, to look if in each season there is a pattern
 }

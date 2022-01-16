@@ -1,7 +1,7 @@
 
 #' Pick libraries needed
 #' @description  #add libraries needed for this weather analysis. Here is ggplot2, ggfortify and GGally
-
+#' @examples libraries_for_this_analysis()
 #' @export
 libraries_for_this_analysis<-function(){
   #libraries needed in this weather analysis
@@ -15,7 +15,8 @@ libraries_for_this_analysis<-function(){
 #' @param second_dataset file
 #' @return the combination of \code{first_dataset} and \code{second_dataset} + add a variable \strong{Location}
 #' @description Use this function when you want to analyse 2 different weather dataset together. It will add a variable \strong{Location} to differentiate them by adding their title(make sure to name right your file)
-
+#' @examples
+#' GVE_vs_GSB-combine_meteo_data("Geneva","Col_Saint_Bernard")
 #' @export
 combine_meteo_data<- function(first_dataset,second_dataset){
   #if use 2 dataset, one way to analyse is to merge them
@@ -43,7 +44,8 @@ combine_meteo_data<- function(first_dataset,second_dataset){
 #' @param dataset data frame
 #' @description Use for adding seasons, to look if in each season there is a pattern
 #' @return Add a variable \strong{Season}, which has \emph{Winter}, \emph{Spring}, \emph{Summer} and \emph{Autumn}
-
+#' @examples
+#' add_seasons(GVE_vs_GSB)
 #' @export
 add_seasons<-function(dataset){
   dataset_season$Season[dataset_season$Month==12|dataset_season$Month==1|dataset_season$Month==2]<-"Winter"
@@ -59,7 +61,7 @@ add_seasons<-function(dataset){
 #' @description A first glance on the data to have an idea of the evolution of the temperature
 #' @return a ggplot of the \code{dataset}
 #' @details Expected the data is the combination of two weather data frame
-
+#' @examples first_graph_analysis(GVE_vs_GSB)
 #' @export
 first_graph_analysis<-function(dataset){
   ggplot(dataset,aes(x=Year,y=Temperature,color=Location))+geom_point()+geom_smooth(method = lm)+ggtitle("Evolution of the temperature for 2 Locations")
@@ -69,7 +71,7 @@ first_graph_analysis<-function(dataset){
 #' @description a more general view on other variables
 #' @return a ggppairs of \code{dataset}
 #' @details Expected the data is the combination of two weather data frame
-
+#' @examples second_graph_analysis(GVE_vs_GSB)
 #' @export
 second_graph_analysis<-function(dataset){
   ggpairs(dataset,aes(color=Location))+theme(axis.text.x = element_text(angle = 90, vjust=1, hjust=1), axis.text.y = element_text(size=3))
@@ -79,7 +81,8 @@ second_graph_analysis<-function(dataset){
 #' @description Instead of doing manual again, if you are using the same data, it should have the same best linear model to explain \code{dataset}. In case of you want to remove other variables or interaction, it have to do it manually
 #' @return a linear model to explain \code{dataset}
 #' @details expected the data is the combination of two weather data, to have the right formula, if using the same kind of data
-
+#' @examples
+#' meteo_lm<-best_linear_model_in_this_analysis(GVE_vs_GSB)
 #' @export
 best_linear_model_in_this_analysis<-function(dataset){
   #put all the filtration here, in case the person using this r packages wants to know which interaction or variables I choose to not use
@@ -96,8 +99,9 @@ best_linear_model_in_this_analysis<-function(dataset){
 #' @param linear_model lm
 #' @description a validation of \code{linear model}
 #' @return the autoplot of \code{linear_model}
-
+#' @examples third_graph_analysis(meteo_lm)
 #' @export
 third_graph_analysis<-function(linear_model){
   autoplot(linear_model,c(1:4))
 }
+

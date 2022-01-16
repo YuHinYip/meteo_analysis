@@ -7,5 +7,5 @@
 libraries_for_this_analysis()
 }
 \description{
-Pick libraries needed
+#add libraries needed for this weather analysis. Here is ggplot2, ggfortify and GGally
 }

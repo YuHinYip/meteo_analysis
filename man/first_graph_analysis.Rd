@@ -7,8 +7,14 @@
 first_graph_analysis(dataset)
 }
 \arguments{
-\item{dataset}{data.frame}
+\item{dataset}{data frame}
+}
+\value{
+a ggplot of the \code{dataset}
 }
 \description{
-First ggplot
+A first glance on the data to have an idea of the evolution of the temperature
+}
+\details{
+Expected the data is the combination of two weather data frame
 }

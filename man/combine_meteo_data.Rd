@@ -7,10 +7,13 @@
 combine_meteo_data(first_dataset, second_dataset)
 }
 \arguments{
-\item{first_dataset}{data.frame}
+\item{first_dataset}{file}
 
-\item{second_dataset}{data.frame}
+\item{second_dataset}{file}
+}
+\value{
+the combination of \code{first_dataset} and \code{second_dataset} + add a variable \strong{Location}
 }
 \description{
-Combine meteo dataset
+Use this function when you want to analyse 2 different weather dataset together. It will add a variable \strong{Location} to differentiate them by adding their title(make sure to name right your file)
 }
