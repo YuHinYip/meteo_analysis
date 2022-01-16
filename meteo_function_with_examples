@@ -1,15 +1,3 @@
-
-#' Pick libraries needed
-#' @description  #add libraries needed for this weather analysis. Here is ggplot2, ggfortify and GGally
-#' @examples libraries_for_this_analysis()
-#' @export
-libraries_for_this_analysis<-function(){
-  #libraries needed in this weather analysis
-  requireNamespace(ggplot2)
-  requireNamespace(ggfortify)
-  requireNamespace(GGally)
-}
-
 #' Combine meteo dataset
 #' @param first_dataset file
 #' @param second_dataset file
